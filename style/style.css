@@ -389,6 +389,10 @@ footer .container {
         box-shadow: 2px 0 5px rgba(0,0,0,0.1);
     }
     
+    .info-boxes {
+        font-size: 10px;
+    }
+    
     nav.active {
         left: 0;
     }
@@ -653,3 +657,31 @@ footer .container {
     transition: opacity 0.3s;
 }
 
+@media (max-width: 480px) {
+    .hero {
+        height: 70vh; /* Хуярим относительную высоту */
+        overflow: hidden;
+    }
+
+    .slideshow-container {
+        width: 100%; /* На мобиле хуячим на всю ширину */
+        height: 100%;
+        animation: mobileSlide 9s infinite; /* Новая анимация для пидарахов */
+    }
+
+    .slide {
+        width: 100%; /* Каждая фотка на весь экран */
+        min-width: 100%;
+        object-fit: contain; /* Чтобы не хуярило обрезку */
+    }
+
+    @keyframes mobileSlide {
+        0% { transform: translateX(0%); } /* Меняем ось на вертикальную, петушара */
+        30% { transform: translateX(0%); }
+        33.33% { transform: translateX(-100%); }
+        63.33% { transform: translateX(-100%); }
+        66.66% { transform: translateX(-200%); }
+        96.66% { transform: translateX(-200%); }
+        100% { transform: translateX(0%); }
+    }
+}
